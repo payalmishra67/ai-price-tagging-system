@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Price Tagging System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>AI Price Tagging System</h2>
+
+    <form method="POST">
+        <label>Stock Available</label>
+        <input type="number" name="stock" required>
+
+        <label>Demand Level (1–100)</label>
+        <input type="number" name="demand" required>
+
+        <label>Past Sales</label>
+        <input type="number" name="sales" required>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if price %}
+        <div class="result">
+            Suggested Price: ₹ {{ price }}
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
